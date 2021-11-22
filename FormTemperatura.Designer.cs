@@ -30,9 +30,9 @@ namespace FormArduinoAplicaciones_2022_I
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvTemperatura = new System.Windows.Forms.DataGridView();
             this.chartTemperatura = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -66,6 +66,7 @@ namespace FormArduinoAplicaciones_2022_I
             this.dgvTemperatura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColTiempo,
             this.ColTemperatura});
+            this.dgvTemperatura.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvTemperatura.Location = new System.Drawing.Point(53, 221);
             this.dgvTemperatura.Name = "dgvTemperatura";
             this.dgvTemperatura.ReadOnly = true;
@@ -76,19 +77,19 @@ namespace FormArduinoAplicaciones_2022_I
             // 
             // chartTemperatura
             // 
-            chartArea5.AxisX.Title = "Tiempo [s]";
-            chartArea5.AxisY.Title = "Temperatura [°C]";
-            chartArea5.Name = "ChartArea1";
-            this.chartTemperatura.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartTemperatura.Legends.Add(legend5);
+            chartArea6.AxisX.Title = "Tiempo [s]";
+            chartArea6.AxisY.Title = "Temperatura [°C]";
+            chartArea6.Name = "ChartArea1";
+            this.chartTemperatura.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartTemperatura.Legends.Add(legend6);
             this.chartTemperatura.Location = new System.Drawing.Point(710, 221);
             this.chartTemperatura.Name = "chartTemperatura";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Legend = "Legend1";
-            series5.Name = "seTemperatura";
-            this.chartTemperatura.Series.Add(series5);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Legend = "Legend1";
+            series6.Name = "seTemperatura";
+            this.chartTemperatura.Series.Add(series6);
             this.chartTemperatura.Size = new System.Drawing.Size(1339, 683);
             this.chartTemperatura.TabIndex = 1;
             this.chartTemperatura.Text = "chart1";
@@ -210,7 +211,7 @@ namespace FormArduinoAplicaciones_2022_I
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.filtrarDatosToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(301, 86);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 42);
             // 
             // filtrarDatosToolStripMenuItem
             // 
