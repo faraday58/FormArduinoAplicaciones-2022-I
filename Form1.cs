@@ -16,5 +16,13 @@ namespace FormArduinoAplicaciones_2022_I
             formPruebaLED.MdiParent = this;
             formPruebaLED.Show();
         }
+
+        private void temperaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTemperatura formTemperatura = new FormTemperatura();
+            formTemperatura.MdiParent = this;
+            formTemperatura.Show();
+
+        }
     }
 }
