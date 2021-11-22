@@ -47,6 +47,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFiltrarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFiltrarDatos.Designer.cs">
+      <DependentUpon>FormFiltrarDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPruebaLED.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFiltrarDatos.resx">
+      <DependentUpon>FormFiltrarDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPruebaLED.resx">
       <DependentUpon>FormPruebaLED.cs</DependentUpon>
