@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace FormArduinoAplicaciones_2022_I
 {
@@ -11,6 +13,9 @@ namespace FormArduinoAplicaciones_2022_I
         private Random aleatorio;
         private uint tiempo;
         private List<byte> temperaturas;
+        private const string filtroArchivos= "Archivos de Texto | *.txt|Archivos con campos separdados por ','|*.csv|Todos los archivos | *.*";
+
+
         public FormTemperatura()
         {
             InitializeComponent();
@@ -63,6 +68,47 @@ namespace FormArduinoAplicaciones_2022_I
             FormFiltrarDatos formFiltrarDatos = new FormFiltrarDatos(temperaturas);
             formFiltrarDatos.Show();
 
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = filtroArchivos;
+            sfd.DefaultExt = "*.txt";
+            StreamWriter sw = null;
+
+            if(sfd.ShowDialog() == DialogResult.OK    )
+            {
+                try
+                {
+                    sw = new StreamWriter(sfd.FileName );
+                    sw.WriteLine("Tiempo,Temperatura");
+                    for(int i=0; i< dgvTemperatura.Rows.Count; i++  )
+                    {
+                        sw.WriteLine("{0},{1}", dgvTemperatura.Rows[i].Cells["ColTiempo"].Value, dgvTemperatura.Rows[i].Cells["ColTemperatura"].Value);
+                    }
+
+                }
+                catch (IOException error)
+                {
+                    MessageBox.Show(error.Message, "Error");
+                }
+                finally
+                {
+                    sw.Close();
+                }
+
+            }
+
+
+
+        }
+
+        private void cargarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = filtroArchivos;
+            ofd.DefaultExt = "*.txt";
         }
     }
 }
