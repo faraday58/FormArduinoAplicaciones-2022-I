@@ -105,5 +105,20 @@
   <ItemGroup>
     <None Include="foco.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="led.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="termometro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="semaforo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="playPrendido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="playApagado.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

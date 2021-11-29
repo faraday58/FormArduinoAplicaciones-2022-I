@@ -37,7 +37,7 @@ namespace FormArduinoAplicaciones_2022_I
             // ptbFoco
             // 
             this.ptbFoco.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.foco;
-            this.ptbFoco.Location = new System.Drawing.Point(174, 72);
+            this.ptbFoco.Location = new System.Drawing.Point(189, 67);
             this.ptbFoco.Name = "ptbFoco";
             this.ptbFoco.Size = new System.Drawing.Size(396, 371);
             this.ptbFoco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -58,9 +58,11 @@ namespace FormArduinoAplicaciones_2022_I
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(752, 627);
             this.Controls.Add(this.btnOnOff);
             this.Controls.Add(this.ptbFoco);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Name = "FormPruebaLED";
             this.Text = "FormPruebaLED";
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoco)).EndInit();

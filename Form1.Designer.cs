@@ -29,6 +29,7 @@ namespace FormArduinoAplicaciones_2022_I
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,47 +70,49 @@ namespace FormArduinoAplicaciones_2022_I
             this.pruebaToolStripMenuItem});
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(185, 38);
-            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            this.configuraciónToolStripMenuItem.Text = "&Configuración";
             // 
             // puertosToolStripMenuItem
             // 
             this.puertosToolStripMenuItem.Name = "puertosToolStripMenuItem";
-            this.puertosToolStripMenuItem.Size = new System.Drawing.Size(280, 44);
+            this.puertosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.P)));
+            this.puertosToolStripMenuItem.Size = new System.Drawing.Size(401, 44);
             this.puertosToolStripMenuItem.Text = "Puertos";
             // 
             // velocidadToolStripMenuItem
             // 
             this.velocidadToolStripMenuItem.Name = "velocidadToolStripMenuItem";
-            this.velocidadToolStripMenuItem.Size = new System.Drawing.Size(280, 44);
+            this.velocidadToolStripMenuItem.Size = new System.Drawing.Size(401, 44);
             this.velocidadToolStripMenuItem.Text = "Velocidad";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(277, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(398, 6);
             // 
             // verficarToolStripMenuItem
             // 
             this.verficarToolStripMenuItem.Name = "verficarToolStripMenuItem";
-            this.verficarToolStripMenuItem.Size = new System.Drawing.Size(280, 44);
+            this.verficarToolStripMenuItem.Size = new System.Drawing.Size(401, 44);
             this.verficarToolStripMenuItem.Text = "Verficar";
             // 
             // conectarToolStripMenuItem
             // 
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(280, 44);
+            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(401, 44);
             this.conectarToolStripMenuItem.Text = "Conectar";
             // 
             // desconectarToolStripMenuItem
             // 
             this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
-            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(280, 44);
+            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(401, 44);
             this.desconectarToolStripMenuItem.Text = "Desconectar";
             // 
             // pruebaToolStripMenuItem
             // 
             this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(280, 44);
+            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(401, 44);
             this.pruebaToolStripMenuItem.Text = "Prueba";
             // 
             // aplicacionesToolStripMenuItem
@@ -120,26 +123,31 @@ namespace FormArduinoAplicaciones_2022_I
             this.semáforoToolStripMenuItem});
             this.aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
             this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(167, 38);
-            this.aplicacionesToolStripMenuItem.Text = "Aplicaciones";
+            this.aplicacionesToolStripMenuItem.Text = "A&plicaciones";
             // 
             // pruebaLEDToolStripMenuItem
             // 
+            this.pruebaLEDToolStripMenuItem.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.led;
             this.pruebaLEDToolStripMenuItem.Name = "pruebaLEDToolStripMenuItem";
-            this.pruebaLEDToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.pruebaLEDToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.pruebaLEDToolStripMenuItem.Size = new System.Drawing.Size(364, 44);
             this.pruebaLEDToolStripMenuItem.Text = "Prueba LED";
             this.pruebaLEDToolStripMenuItem.Click += new System.EventHandler(this.pruebaLEDToolStripMenuItem_Click);
             // 
             // temperaturaToolStripMenuItem
             // 
+            this.temperaturaToolStripMenuItem.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.termometro;
             this.temperaturaToolStripMenuItem.Name = "temperaturaToolStripMenuItem";
-            this.temperaturaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.temperaturaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.temperaturaToolStripMenuItem.Size = new System.Drawing.Size(364, 44);
             this.temperaturaToolStripMenuItem.Text = "Temperatura";
             this.temperaturaToolStripMenuItem.Click += new System.EventHandler(this.temperaturaToolStripMenuItem_Click);
             // 
             // semáforoToolStripMenuItem
             // 
+            this.semáforoToolStripMenuItem.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.semaforo;
             this.semáforoToolStripMenuItem.Name = "semáforoToolStripMenuItem";
-            this.semáforoToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.semáforoToolStripMenuItem.Size = new System.Drawing.Size(364, 44);
             this.semáforoToolStripMenuItem.Text = "Semáforo";
             // 
             // Form1
@@ -148,6 +156,7 @@ namespace FormArduinoAplicaciones_2022_I
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1695, 717);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
