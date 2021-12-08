@@ -129,6 +129,7 @@ namespace FormArduinoAplicaciones_2022_I
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
             this.conectarToolStripMenuItem.Size = new System.Drawing.Size(401, 44);
             this.conectarToolStripMenuItem.Text = "Conectar";
+            this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // desconectarToolStripMenuItem
             // 

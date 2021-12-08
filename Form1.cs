@@ -12,6 +12,7 @@ namespace FormArduinoAplicaciones_2022_I
             InitializeComponent();
             serialPort = new SerialPort();
             Selecciona();
+            tlsCmbVelocidad.SelectedIndex = 2;
         }
 
         public void Selecciona()
@@ -19,19 +20,19 @@ namespace FormArduinoAplicaciones_2022_I
             string[] puertos = SerialPort.GetPortNames();
             Array.Sort(puertos);
             tlsCmbPuertos.Items.AddRange(puertos);
-
+            
         }
 
         private void pruebaLEDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPruebaLED formPruebaLED = new FormPruebaLED();
+            FormPruebaLED formPruebaLED = new FormPruebaLED(serialPort);
             formPruebaLED.MdiParent = this;
             formPruebaLED.Show();
         }
 
         private void temperaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormTemperatura formTemperatura = new FormTemperatura();
+            FormTemperatura formTemperatura = new FormTemperatura(serialPort);
             formTemperatura.MdiParent = this;
             formTemperatura.Show();
 
@@ -39,7 +40,23 @@ namespace FormArduinoAplicaciones_2022_I
 
         private void verficarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                serialPort.BaudRate = int.Parse(tlsCmbVelocidad.SelectedItem.ToString());
+                serialPort.PortName = tlsCmbPuertos.SelectedItem.ToString();
 
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message,"Error: ");
+            }
+
+        }
+
+        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            serialPort.Open();
+            conectarToolStripMenuItem.Enabled = false;
         }
     }
 }

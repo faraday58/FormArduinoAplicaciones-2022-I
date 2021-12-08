@@ -30,9 +30,9 @@ namespace FormArduinoAplicaciones_2022_I
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvTemperatura = new System.Windows.Forms.DataGridView();
             this.ColTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTemperatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,17 +44,17 @@ namespace FormArduinoAplicaciones_2022_I
             this.cargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iniciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detenerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.simularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iniciarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.detenerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTemp = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iniciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iniciarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemperatura)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemperatura)).BeginInit();
@@ -111,19 +111,19 @@ namespace FormArduinoAplicaciones_2022_I
             // 
             // chartTemperatura
             // 
-            chartArea2.AxisX.Title = "Tiempo [s]";
-            chartArea2.AxisY.Title = "Temperatura [°C]";
-            chartArea2.Name = "ChartArea1";
-            this.chartTemperatura.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartTemperatura.Legends.Add(legend2);
+            chartArea1.AxisX.Title = "Tiempo [s]";
+            chartArea1.AxisY.Title = "Temperatura [°C]";
+            chartArea1.Name = "ChartArea1";
+            this.chartTemperatura.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTemperatura.Legends.Add(legend1);
             this.chartTemperatura.Location = new System.Drawing.Point(710, 221);
             this.chartTemperatura.Name = "chartTemperatura";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "seTemperatura";
-            this.chartTemperatura.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "seTemperatura";
+            this.chartTemperatura.Series.Add(series1);
             this.chartTemperatura.Size = new System.Drawing.Size(1339, 683);
             this.chartTemperatura.TabIndex = 1;
             this.chartTemperatura.Text = "chart1";
@@ -136,7 +136,7 @@ namespace FormArduinoAplicaciones_2022_I
             this.controlToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2170, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(2170, 42);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -172,49 +172,7 @@ namespace FormArduinoAplicaciones_2022_I
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
             this.exportarToolStripMenuItem.Size = new System.Drawing.Size(365, 44);
             this.exportarToolStripMenuItem.Text = "Exportar";
-            // 
-            // controlToolStripMenuItem
-            // 
-            this.controlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iniciarToolStripMenuItem,
-            this.detenerToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.simularToolStripMenuItem});
-            this.controlToolStripMenuItem.Name = "controlToolStripMenuItem";
-            this.controlToolStripMenuItem.Size = new System.Drawing.Size(114, 38);
-            this.controlToolStripMenuItem.Text = "Control";
-            // 
-            // detenerToolStripMenuItem
-            // 
-            this.detenerToolStripMenuItem.Name = "detenerToolStripMenuItem";
-            this.detenerToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.detenerToolStripMenuItem.Text = "Detener";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(356, 6);
-            // 
-            // simularToolStripMenuItem
-            // 
-            this.simularToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iniciarToolStripMenuItem1,
-            this.detenerToolStripMenuItem1});
-            this.simularToolStripMenuItem.Name = "simularToolStripMenuItem";
-            this.simularToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.simularToolStripMenuItem.Text = "Simular";
-            // 
-            // detenerToolStripMenuItem1
-            // 
-            this.detenerToolStripMenuItem1.Name = "detenerToolStripMenuItem1";
-            this.detenerToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
-            this.detenerToolStripMenuItem1.Text = "Detener";
-            this.detenerToolStripMenuItem1.Click += new System.EventHandler(this.detenerToolStripMenuItem1_Click);
-            // 
-            // timerTemp
-            // 
-            this.timerTemp.Interval = 500;
-            this.timerTemp.Tick += new System.EventHandler(this.timerTemp_Tick);
+            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -230,27 +188,72 @@ namespace FormArduinoAplicaciones_2022_I
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
-            // iniciarToolStripMenuItem
-            // 
-            this.iniciarToolStripMenuItem.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.playApagado;
-            this.iniciarToolStripMenuItem.Name = "iniciarToolStripMenuItem";
-            this.iniciarToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.iniciarToolStripMenuItem.Text = "Iniciar";
-            // 
-            // iniciarToolStripMenuItem1
-            // 
-            this.iniciarToolStripMenuItem1.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.playPrendido;
-            this.iniciarToolStripMenuItem1.Name = "iniciarToolStripMenuItem1";
-            this.iniciarToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
-            this.iniciarToolStripMenuItem1.Text = "Iniciar";
-            this.iniciarToolStripMenuItem1.Click += new System.EventHandler(this.iniciarToolStripMenuItem1_Click);
-            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(365, 44);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // controlToolStripMenuItem
+            // 
+            this.controlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iniciarToolStripMenuItem,
+            this.detenerToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.simularToolStripMenuItem});
+            this.controlToolStripMenuItem.Name = "controlToolStripMenuItem";
+            this.controlToolStripMenuItem.Size = new System.Drawing.Size(114, 38);
+            this.controlToolStripMenuItem.Text = "Control";
+            // 
+            // iniciarToolStripMenuItem
+            // 
+            this.iniciarToolStripMenuItem.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.playApagado;
+            this.iniciarToolStripMenuItem.Name = "iniciarToolStripMenuItem";
+            this.iniciarToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.iniciarToolStripMenuItem.Text = "Iniciar";
+            this.iniciarToolStripMenuItem.Click += new System.EventHandler(this.iniciarToolStripMenuItem_Click);
+            // 
+            // detenerToolStripMenuItem
+            // 
+            this.detenerToolStripMenuItem.Name = "detenerToolStripMenuItem";
+            this.detenerToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.detenerToolStripMenuItem.Text = "Detener";
+            this.detenerToolStripMenuItem.Click += new System.EventHandler(this.detenerToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(356, 6);
+            // 
+            // simularToolStripMenuItem
+            // 
+            this.simularToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iniciarToolStripMenuItem1,
+            this.detenerToolStripMenuItem1});
+            this.simularToolStripMenuItem.Name = "simularToolStripMenuItem";
+            this.simularToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.simularToolStripMenuItem.Text = "Simular";
+            // 
+            // iniciarToolStripMenuItem1
+            // 
+            this.iniciarToolStripMenuItem1.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.playPrendido;
+            this.iniciarToolStripMenuItem1.Name = "iniciarToolStripMenuItem1";
+            this.iniciarToolStripMenuItem1.Size = new System.Drawing.Size(235, 44);
+            this.iniciarToolStripMenuItem1.Text = "Iniciar";
+            this.iniciarToolStripMenuItem1.Click += new System.EventHandler(this.iniciarToolStripMenuItem1_Click);
+            // 
+            // detenerToolStripMenuItem1
+            // 
+            this.detenerToolStripMenuItem1.Name = "detenerToolStripMenuItem1";
+            this.detenerToolStripMenuItem1.Size = new System.Drawing.Size(235, 44);
+            this.detenerToolStripMenuItem1.Text = "Detener";
+            this.detenerToolStripMenuItem1.Click += new System.EventHandler(this.detenerToolStripMenuItem1_Click);
+            // 
+            // timerTemp
+            // 
+            this.timerTemp.Interval = 1000;
+            this.timerTemp.Tick += new System.EventHandler(this.timerTemp_Tick);
             // 
             // FormTemperatura
             // 

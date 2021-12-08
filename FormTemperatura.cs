@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO.Ports;
 using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 
 namespace FormArduinoAplicaciones_2022_I
@@ -14,13 +17,15 @@ namespace FormArduinoAplicaciones_2022_I
         private uint tiempo;
         private List<byte> temperaturas;
         private const string filtroArchivos = "Archivos de Texto | *.txt|Archivos con campos separdados por ','|*.csv|Todos los archivos | *.*";
+        private SerialPort serialPort;
+        bool simulador;
 
-
-        public FormTemperatura()
+        public FormTemperatura(SerialPort serialPort)
         {
             InitializeComponent();
             aleatorio = new Random();
             ValidarGuardar();
+            this.serialPort = serialPort;
         }
         #region Propiedades
         public byte Temperatura { get => temperatura;
@@ -55,16 +60,28 @@ namespace FormArduinoAplicaciones_2022_I
 
         private void timerTemp_Tick(object sender, EventArgs e)
         {
-            Temperatura = (byte )aleatorio.Next(120);
-            tiempo++;
-            dgvTemperatura.Rows.Add(tiempo, Temperatura);
-            chartTemperatura.Series["seTemperatura"].Points.AddXY(tiempo, Temperatura);
+            if( simulador)
+            {
+                Temperatura = (byte)aleatorio.Next(120);
+                tiempo++;
+                dgvTemperatura.Rows.Add(tiempo, Temperatura);
+                chartTemperatura.Series["seTemperatura"].Points.AddXY(tiempo, Temperatura);
+            }
+            else
+            {
+                tiempo++;
+                Temperatura =(byte)serialPort.ReadByte();
+                dgvTemperatura.Rows.Add(tiempo, Temperatura);
+                chartTemperatura.Series["seTemperatura"].Points.AddXY(tiempo, Temperatura);
+            }
+            
         }
 
         private void iniciarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.iniciarToolStripMenuItem1.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.playApagado;
             timerTemp.Start();
+            simulador = true;
 
         }
 
@@ -73,6 +90,7 @@ namespace FormArduinoAplicaciones_2022_I
             timerTemp.Stop();
             ValidarGuardar();
             this.iniciarToolStripMenuItem1.Image = global::FormArduinoAplicaciones_2022_I.Properties.Resources.playPrendido;
+            simulador = false;
         }
 
         private void filtrarDatosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,6 +188,37 @@ namespace FormArduinoAplicaciones_2022_I
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void iniciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timerTemp.Start();
+        }
+
+        private void detenerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timerTemp.Stop();
+        }
+
+        private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Document docPdf = new Document(iTextSharp.text.PageSize.LETTER,10,10,42,35);
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = " Archivos pdf | *.pdf  ";
+
+            if( sfd.ShowDialog() == DialogResult.OK  )
+            {
+                PdfWriter pdfWriter = PdfWriter.GetInstance(docPdf, new FileStream(sfd.FileName,FileMode.Append ));
+                docPdf.Open();
+                MemoryStream imagenStream = new MemoryStream();
+                chartTemperatura.SaveImage(imagenStream, System.Windows.Forms.DataVisualization.Charting.ChartImageFormat.Png);
+                iTextSharp.text.Image ImagenPDF = iTextSharp.text.Image.GetInstance(imagenStream.GetBuffer());
+                docPdf.Add(ImagenPDF);
+                docPdf.Close();
+
+            }
+
+
         }
     }
 }
